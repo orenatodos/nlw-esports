@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-3 border-none rounded h-12 px-4;
+  }
+
+  .focus {
+    @apply outline-none;
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 2px theme('colors.primary.500');
+    }
+  }
+}
+
+.btn-primary {
+  @apply btn bg-primary-500 text-white;
+
+  &:hover {
+    @apply bg-primary-600;
+  }
+
+  &:active {
+    @apply bg-primary-700;
+  }
+}
+
+.btn-secondary {
+  @apply btn bg-secondary-500 text-white;
+
+  &:hover {
+    @apply bg-secondary-600;
+  }
+
+  &:active {
+    @apply bg-secondary-700;
+  }
+}
+
+button[data-state="on"] {
+  @apply bg-primary-500
+}
+
+button[data-state="off"] {
+  @apply bg-secondary-900
+}
